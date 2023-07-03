@@ -32,5 +32,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvMeditate"
         app:layout_constraintVertical_bias="0.884"
-        android:backgroundTint="#008080"
+        android:backgroundTint="#008080"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
