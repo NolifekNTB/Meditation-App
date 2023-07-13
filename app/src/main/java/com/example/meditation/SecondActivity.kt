@@ -21,7 +21,6 @@ class SecondActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySecondBinding
     private val mainVM by viewModels<MainViewModel>()
     private lateinit var dataStore: DataStore<androidx.datastore.preferences.core.Preferences>
-    val Context.dataStore: DataStore<androidx.datastore.preferences.core.Preferences> by preferencesDataStore(name = "settings")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +44,7 @@ class SecondActivity : AppCompatActivity() {
             true
         }
         Log.d("SecondActivity", "onCreate")
+        mainVM.readProgressFromFile(this)
     }
 
     override fun onResume() {
@@ -57,6 +57,7 @@ class SecondActivity : AppCompatActivity() {
         Log.d("SecondActivity", "onStop")
         Toast.makeText(this, "SecondActivity points ${mainVM.progress}", Toast.LENGTH_SHORT)
             .show()
+        mainVM.saveProgressToFile(this)
     }
     override fun onDestroy() {
         super.onDestroy()
