@@ -1,4 +1,4 @@
-package com.example.meditation
+package com.example.meditation.ui
 
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -8,7 +8,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
+import com.example.meditation.viewModel.MainViewModel
+import com.example.meditation.R
 import com.example.meditation.databinding.FragmentHomeBinding
 
 

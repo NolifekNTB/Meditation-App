@@ -1,4 +1,4 @@
-package com.example.meditation
+package com.example.meditation.viewModel
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
@@ -12,7 +12,7 @@ import java.io.OutputStreamWriter
 class MainViewModel(): ViewModel() {
     var progress: Int = 0
 
-    fun s (context: Context) {
+    fun saveProgressToFile (context: Context) {
         val fileName = "data.txt"
 
         try {
