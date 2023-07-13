@@ -1,17 +1,21 @@
 package com.example.meditation
 
+import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import com.example.meditation.databinding.FragmentProfileBinding
+import java.io.File
+
 
 class ProfileFragment : Fragment(R.layout.fragment_profile) {
     private lateinit var _binding: FragmentProfileBinding
-    private val mainVM by viewModels<MainViewModel>()
+    private val mainVM by activityViewModels<MainViewModel>()
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -25,7 +29,11 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
     override fun onResume() {
         super.onResume()
-        binding.pbProgress.progress +=  mainVM.progress
-        Toast.makeText(requireContext(), "OnResume Your progress mainVM ${mainVM.progress} and layout bar ${binding.pbProgress.progress}", Toast.LENGTH_SHORT).show()
+        binding.pbProgress.progress =  mainVM.progress
     }
+
+    override fun onPause() {
+        super.onPause()
+    }
+
 }

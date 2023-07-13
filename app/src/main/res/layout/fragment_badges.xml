@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BadgesFragment"
+    android:orientation="vertical">
+
+    <!--1-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="200sp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginTop="25sp"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:maxLines="2"
+
+            android:text="Twoj Stary EL Primo (200XP)"/>
+
+        <ImageView
+            android:layout_width="240sp"
+            android:layout_height="200sp"
+            android:src="@drawable/elprimo"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+    <!--2-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginTop="25sp"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="20sp"
+            android:maxLines="2"
+
+            android:text="Sid (20 day streak)"/>
+
+        <ImageView
+            android:layout_width="240sp"
+            android:layout_height="200sp"
+            android:src="@drawable/marirenti"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+    <!--3-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginTop="25sp"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="20sp"
+            android:maxLines="2"
+
+            android:text="Bober (60 general days)"/>
+
+        <ImageView
+            android:layout_width="240sp"
+            android:layout_height="200sp"
+            android:src="@drawable/zusje"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+
+
+</LinearLayout>

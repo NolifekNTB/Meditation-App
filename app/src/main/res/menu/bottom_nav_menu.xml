@@ -7,6 +7,11 @@
         android:title="Home" />
 
     <item
+        android:id="@+id/iBadge"
+        android:icon="@drawable/baseline_lightbulb_24"
+        android:title="Badges" />
+
+    <item
         android:id="@+id/iProfile"
         android:icon="@drawable/baseline_person_24"
         android:title="Profile" />

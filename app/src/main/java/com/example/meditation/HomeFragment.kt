@@ -7,14 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import com.example.meditation.databinding.FragmentHomeBinding
 
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
     private lateinit var _binding: FragmentHomeBinding
-    private val mainVM by viewModels<MainViewModel>()
     private val binding get() = _binding!!
+    private val mainVM by activityViewModels<MainViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,8 +27,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         //Timer
         binding.btnRun.setOnClickListener {
             object : CountDownTimer(3000, 1000) {
+
                 override fun onTick(millisUntilFinished: Long) {
-                    binding.tvMeditate.setText("Seconds remaining: " + millisUntilFinished / 1000)
+                    binding.tvMeditate.setText("Seconds remaining: " + millisUntilFinished/1000)
                 }
 
                 override fun onFinish() {

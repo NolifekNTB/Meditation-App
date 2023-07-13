@@ -20,6 +20,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+
         binding.btnStart.setOnClickListener {
             Intent(this, SecondActivity::class.java).also{
                 startActivity(it)
