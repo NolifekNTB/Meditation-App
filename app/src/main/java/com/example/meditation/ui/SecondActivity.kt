@@ -1,5 +1,6 @@
 package com.example.meditation.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -9,6 +10,7 @@ import androidx.datastore.core.DataStore
 import androidx.fragment.app.Fragment
 import com.example.meditation.viewModel.MainViewModel
 import com.example.meditation.R
+import com.example.meditation.Service.RunningService
 import com.example.meditation.databinding.ActivitySecondBinding
 
 
@@ -40,6 +42,10 @@ class SecondActivity : AppCompatActivity() {
         }
         Log.d("SecondActivity", "onCreate")
         mainVM.readProgressFromFile(this)
+        Intent(applicationContext, RunningService::class.java).also {
+            it.action = RunningService.Actions.STOP.toString()
+            startService(it)
+        }
     }
 
     override fun onResume() {
@@ -53,6 +59,10 @@ class SecondActivity : AppCompatActivity() {
         Toast.makeText(this, "SecondActivity points ${mainVM.progress}", Toast.LENGTH_SHORT)
             .show()
         mainVM.saveProgressToFile(this)
+        Intent(applicationContext, RunningService::class.java).also {
+            it.action = RunningService.Actions.START.toString()
+            startService(it)
+        }
     }
     override fun onDestroy() {
         super.onDestroy()

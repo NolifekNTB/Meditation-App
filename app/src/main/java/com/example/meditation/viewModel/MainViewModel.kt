@@ -11,6 +11,7 @@ import java.io.OutputStreamWriter
 
 class MainViewModel(): ViewModel() {
     var progress: Int = 0
+    var secs: Long = 0
 
     fun saveProgressToFile (context: Context) {
         val fileName = "data.txt"

@@ -30,7 +30,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             object : CountDownTimer(3000, 1000) {
 
                 override fun onTick(millisUntilFinished: Long) {
-                    binding.tvMeditate.setText("Seconds remaining: " + millisUntilFinished/1000)
+                    mainVM.secs = millisUntilFinished/1000
+                    binding.tvMeditate.setText("Seconds remaining: " + mainVM.secs)
                 }
 
                 override fun onFinish() {
